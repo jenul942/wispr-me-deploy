@@ -1,0 +1,28 @@
+{
+  "name": "wispr-me-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dry-run": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy --keep-vars"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261023.3-beta",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.156.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "GROQ_API_KEY": {
+        "description": "Paste your own API key from [Groq](https://console.groq.com/keys). This is not a Grok key or a device token."
+      },
+      "DEVICE_TOKENS_JSON": {
+        "description": "Open the Wispr Me Setup.html included with your apps, click Create my connections, then copy the Device connections value here. Replace the example completely."
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Enter YOUR Groq key. Never use this example as a real credential.
+GROQ_API_KEY="replace-with-your-groq-key"
+# Paste Device connections from Setup.html, replacing this example.
+DEVICE_TOKENS_JSON='{"replace-with-generated-device-connections":"owner"}'

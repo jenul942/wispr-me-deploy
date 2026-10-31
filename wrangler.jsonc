@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wispr-me-api",
+  "workers_dev": true,
+  "preview_urls": false,
+  "main": "worker.js",
+  "compatibility_date": "2026-10-30",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "secrets": {
+    "required": [
+      "GROQ_API_KEY",
+      "DEVICE_TOKENS_JSON"
+    ]
+  },
+  "observability": {
+    "enabled": false
+  },
+  "ratelimits": [
+    {
+      "name": "IP_LIMITER",
+      "namespace_id": "93817401",
+      "simple": {
+        "limit": 60,
+        "period": 60
+      }
+    },
+    {
+      "name": "USER_LIMITER",
+      "namespace_id": "93817402",
+      "simple": {
+        "limit": 20,
+        "period": 60
+      }
+    }
+  ]
+}
